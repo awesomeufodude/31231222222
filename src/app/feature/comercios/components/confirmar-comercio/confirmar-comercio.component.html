@@ -1,0 +1,38 @@
+<mat-dialog-content class="dialog-body mat-typography">
+  <ng-container *ngIf="selected?.length; else noneSelected">
+    <ng-container *ngFor="let row of selected; let i = index">
+      <h3 class="comercio-h">{{ row.nombre }} – {{ row.rut }}</h3>
+      <div class="select-grid" [formGroup]="rowGroup(i)">
+        <div class="field">
+          <label>Cuenta operaciones</label>
+          <app-select
+            formControlName="op"
+            [options]="cuentas"
+            placeholder="Cuenta operaciones"
+            icon="assets/icons/down-arrow.svg"
+          ></app-select>
+        </div>
+        <div class="field">
+          <label>Cuenta comisión</label>
+          <app-select
+            formControlName="cm"
+            [options]="cuentas"
+            placeholder="Cuenta comisión"
+            icon="assets/icons/down-arrow.svg"
+          ></app-select>
+        </div>
+      </div>
+    </ng-container>
+  </ng-container>
+
+  <ng-template #noneSelected>
+    <p>No hay comercios seleccionados.</p>
+  </ng-template>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <ui-button variant="outline" (click)="volver()">Volver</ui-button>
+  <ui-button (click)="confirmar()" [disabled]="form.invalid">
+    Confirmar
+  </ui-button>
+</mat-dialog-actions>

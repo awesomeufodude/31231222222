@@ -1,0 +1,15 @@
+<h2 mat-dialog-title>Código {{ row.codigo }}</h2>
+
+<mat-dialog-content class="mat-typography">
+  <div><strong>Tipo acción:</strong> {{ row.tipoAccion }}</div>
+  <div><strong>Objeto:</strong> {{ row.objeto }}</div>
+  <div><strong>Usuario:</strong> {{ row.usuario }}</div>
+  <div><strong>Actualización:</strong> {{ row.actualizacion }}</div>
+
+  <div><strong>Datos actuales:</strong></div>
+  <pre class="json-code">{{ row.json }}</pre>
+</mat-dialog-content>
+
+<mat-dialog-actions align="center">
+  <ui-button variant="outline" (click)="salir()">Salir</ui-button>
+</mat-dialog-actions>

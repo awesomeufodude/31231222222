@@ -1,0 +1,48 @@
+<h2 mat-dialog-title>Agregar comercio</h2>
+
+<mat-dialog-content class="dialog-body mat-typography">
+  <div class="grid-wrapper">
+    <form [formGroup]="dialogForm">
+      <div class="grid-container">
+        <div class="input-group grid-item">
+          <app-input formControlName="name" placeholder="Nombre" type="text"></app-input>
+        </div>
+        <div class="input-group grid-item">
+          <app-input formControlName="rut" placeholder="RUT" type="text"></app-input>
+        </div>
+        <app-select
+          formControlName="estado"
+          [placeholder]="'Estado'"
+          [options]="estados"
+          [icon]="'assets/icons/down-arrow.svg'">
+        </app-select>
+      </div>
+    </form>
+  </div>
+
+  <app-data-table
+    *ngIf="rows.length"
+    class="table-flex"
+    [columns]="columns"
+    [data]="rows"
+    [pageSize]="10"
+    [pageSizeOptions]="[5,10,25]"
+    [rowActions]="rowActions"
+    paginatorBarClass="pg-white"
+    (selectionChange)="onSelection($event)"
+    (action)="handleAction($event)">
+
+    <ng-template dataTableCell="estado" let-row>
+      <span [ngClass]="{ activo: row.estado==='Activo', inactivo: row.estado==='Inactivo' }">
+        {{ row.estado }}
+      </span>
+    </ng-template>
+  </app-data-table>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <ui-button variant="outline" (click)="onClose()">Volver</ui-button>
+  <ui-button (click)="onSave()" [disabled]="!hasSelection || dialogForm.invalid">
+    Continuar
+  </ui-button>
+</mat-dialog-actions>

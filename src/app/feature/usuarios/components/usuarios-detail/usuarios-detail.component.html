@@ -1,0 +1,24 @@
+<h2 mat-dialog-title>Detalle de Usuario</h2>
+
+<mat-dialog-content class="mat-typography">
+  <div><strong>Nombre:</strong> {{ row.nombre }}</div>
+  <div><strong>Correo:</strong> {{ row.correo }}</div>
+  <div><strong>ID:</strong> {{ row.id }}</div>
+  <div><strong>Rol:</strong> {{ row.rol }}</div>
+  <div>
+    <strong class="estado-toggle">Estado:</strong>
+    <app-slide-toggle
+      [checked]="row.estado === 'Activo'"
+      [disabled]="false"
+      labelPosition="before"
+      label="{{ row.estado }}"
+      [toggleClass]="['my-slide', 'estado-toggle']"
+      (toggled)="onEstadoToggle($event)"
+    ></app-slide-toggle>
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions align="center">
+  <ui-button variant="outline" (click)="salir()">Salir</ui-button>
+  <ui-button (click)="guardar()">Guardar cambios</ui-button>
+</mat-dialog-actions>

@@ -1,0 +1,43 @@
+<div class="page-container">
+  <div class="select-group">
+    <mat-form-field appearance="outline" class="page-size">
+      <mat-select
+        [value]="pageSize"
+        (selectionChange)="changePageSize($any($event).value)"
+      >
+        <mat-option *ngFor="let o of pageSizeOptions" [value]="o">{{ o }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <span class="select-label">Items displayed</span>
+  </div>
+
+  <div class="range-label">
+    {{ pageIndex * pageSize + 1 }}
+    to
+    {{ (pageIndex + 1) * pageSize > length ? length : (pageIndex + 1) * pageSize }}
+    of <strong>{{ length }} Items</strong>
+  </div>
+
+  <div class="page-numbers-container">
+    <button (click)="prev()" [disabled]="!pageIndex" class="action-btn">
+      <mat-icon>chevron_left</mat-icon><span class="action-btn-text">Prev</span>
+    </button>
+
+    <button
+      *ngFor="let p of pages; trackBy: trackByPage"
+      class="page-btn"
+      [class.active]="p === pageIndex + 1"
+      (click)="goPage(p)"
+    >
+      {{ p }}
+    </button>
+
+    <button
+      (click)="next()"
+      [disabled]="pageIndex + 1 === totalPages"
+      class="action-btn"
+    >
+      <span class="action-btn-text">Next</span><mat-icon>chevron_right</mat-icon>
+    </button>
+  </div>
+</div>

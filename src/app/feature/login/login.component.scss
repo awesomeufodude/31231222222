@@ -1,0 +1,39 @@
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .main-content {
+    flex: 1;
+    background: #ffffff;
+    padding: 30px 12px;
+  }
+  
+  .content-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    min-height: 500px;
+
+    .illustration {
+        width: 486px;
+        height: 484;
+    }
+  }
+  
+  @media (max-width: 1024px) {
+    .content-wrapper {
+      grid-template-columns: 1fr;
+      gap: 40px;
+      text-align: center;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .main-content {
+      padding: 40px 16px;
+    }
+  }

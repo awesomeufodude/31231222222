@@ -1,0 +1,124 @@
+
+$brand:          var(--color-action-main-default,   #EC0000);
+$brand-on:       var(--color-action-on-main-default,#FFFFFF);
+$brand-hover:    var(--color-action-main-hover,     #CA0000);
+$brand-border:   var(--color-background-brand,      #EC0000);
+
+$secondary-bg:   var(--color-button-secondary-default,      #FFFFFF);
+$secondary-on:   var(--color-button-on-secondary-default,   #EC0000);
+
+$disabled-bg:    var(--color-action-disabled,               rgba(34,34,34,.06));
+$disabled-text:  var(--Action-on-disabled, var(--color-action-on-disabled, rgba(34,34,34,.23)));
+
+
+$brand-hex:        #EC0000;
+$brand-hover-hex:  #CA0000;
+
+
+$radius:    50px;
+$font-size: 14px;
+$line-h:    20px;
+$gap:       4px;
+$h-pad:     16px;
+$icon-size: 18px;
+
+
+:host {
+  display: inline-block;
+
+  button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: $gap;
+    padding: 8px $h-pad;
+    min-height: 32px;
+    width: 100%;                 
+    border-radius: $radius;
+    font-size: $font-size;
+    font-weight: 700;
+    line-height: $line-h;
+    border: 1px solid transparent;
+    cursor: pointer;
+    outline: none;
+    transition: background .15s, border-color .15s, color .15s, opacity .15s;
+
+    &:focus-visible {
+      box-shadow: 0 0 0 2px rgba(#000, .15);
+    }
+
+    .btn__icon {
+      font-size: $icon-size;
+      width:  $icon-size;
+      height: $icon-size;
+    }
+  }
+}
+
+
+button:disabled,
+:host(.is-disabled) button {
+  background: $disabled-bg !important;
+  color: $disabled-text   !important;
+  border-color: transparent !important;
+  cursor: not-allowed;
+  pointer-events: none;
+  box-shadow: none;
+}
+
+:host(.ui-btn--solid) button {
+  background: $brand;
+  color: $brand-on;
+
+  &:hover  { background: $brand-hover; }
+  &:active { background: lighten($brand-hover-hex, 5%); }
+}
+
+:host(.ui-btn--outline) button {
+  background: #FFFFFF;
+  color: $brand;
+  border-color: $brand-border;
+
+  &:hover  { background: rgba($brand-hex, .05); }
+  &:active { background: rgba($brand-hex, .10); }
+}
+
+:host(.ui-btn--ghost) button {
+  background: transparent;
+  color: $brand;
+
+  &:hover  { background: rgba($brand-hex, .05); }
+  &:active { background: rgba($brand-hex, .10); }
+}
+
+:host(.ui-btn--secondary) button {
+  background: $secondary-bg;
+  color: $secondary-on;
+  border-color: $brand-border;
+
+  &:hover  { background: rgba(#000000, .05); }
+  &:active { background: rgba(#000000, .10); }
+}
+
+:host(.ui-btn--danger) button {
+  background: var(--color-background-warning, #FFFAEB);
+  color:      var(--Text-warning,              #856300);
+  border-color: var(--color-background-warning, #FFFAEB);
+
+  &:hover  { background: #FFF4D4; }
+  &:active { background: #FAE7B5; }
+}
+
+:host(.ui-btn--link-white) button {
+  background: transparent;
+  color: #FFFFFF;
+  border-color: transparent;
+}
+
+:host(.ui-btn--link) button {
+  background: transparent;
+  color: $brand;
+  padding: 0 4px 0 4px;
+  min-height: auto;
+  &:hover  { text-decoration: underline; }
+}

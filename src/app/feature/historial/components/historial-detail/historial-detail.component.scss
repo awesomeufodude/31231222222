@@ -1,0 +1,35 @@
+mat-dialog-content {
+  display: flex;
+  flex-direction: column;
+  gap: 18px 16px;
+  > div {
+    strong {
+      color: var(--Text-default, var(--color-text-default, #222));
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 24px;
+    }
+    &:nth-child(odd) {
+      color: #444;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 24px;
+    }
+  }
+}
+
+
+.json-code {
+  border-radius: 4px 4px 0px 0px;
+  border-bottom: 1px dashed #257FA4;
+  background: #F5F9FB;
+  padding: 16px;
+  overflow: auto;
+  max-height: 300px;
+  font-family: monospace;
+  font-size: 13px;
+  line-height: 1.4;
+  white-space: pre-wrap;  
+}

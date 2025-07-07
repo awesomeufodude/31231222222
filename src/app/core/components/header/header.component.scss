@@ -1,0 +1,15 @@
+.header {
+    background: #EC3000;
+    padding: 0 8px;
+    gap: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 56px;
+    display: flex;
+    align-items: center;
+  }
+  
+  @media (max-width: 480px) {
+    .header {
+      padding: 12px 16px;
+    }
+  }

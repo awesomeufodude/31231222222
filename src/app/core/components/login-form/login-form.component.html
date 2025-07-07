@@ -1,0 +1,31 @@
+<div class="form-section">
+  <div class="welcome-text">
+    <h1>Te damos la bienvenida</h1>
+    <p>A la plataforma de <strong>Santander en tu Barrio</strong></p>
+  </div>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="login-form">
+    <div class="input-group">
+      <app-input
+        formControlName="rut"
+        placeholder="Ingresa tu RUT"
+        suffixIcon="assets/login/user.png"
+        type="text"
+        [useMatIcon]="false"
+      >
+      </app-input>
+    </div>
+    <div class="input-group">
+      <app-input
+        formControlName="password"
+        placeholder="Ingresa tu clave de intranet"
+        suffixIcon="assets/login/password.png"
+        type="password"
+        [useMatIcon]="false"
+      ></app-input>
+    </div>
+    <div class="submit-btn-wrapper">
+      <ui-button type="submit" class="submit-btn" [disabled]="!form.valid">Ingresar</ui-button>
+    </div>
+  </form>
+</div>

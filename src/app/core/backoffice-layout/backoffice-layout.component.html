@@ -1,0 +1,128 @@
+<mat-sidenav-container class="sidenav-container">
+  <!-- Sidebar -->
+  <mat-sidenav mode="side" opened class="sidenav">
+    <mat-toolbar>
+      <img src="assets/logo-santander-blanco.png" alt="Santander" class="logo" />
+    </mat-toolbar>
+
+    <mat-nav-list>
+      <mat-list-item
+        routerLink="/comercios"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="sidebar-link-wrapper"
+      >
+        <img
+          [src]="isActive('/comercios') ? 'assets/icons/comercios-activo.svg' : 'assets/icons/comercios.svg'"
+          alt="Comercios"
+          matListItemIcon
+        />
+        <span class="sidebar-link" matListItemTitle matListItemTitle [class.active-text]="isActive('/comercios')">
+          Comercios
+        </span>
+      </mat-list-item>
+
+      <mat-list-item
+        routerLink="/sucursales"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="sidebar-link-wrapper"
+      >
+        <img
+          [src]="isActive('/sucursales') ? 'assets/icons/sucursales-active.svg' : 'assets/icons/sucursales.svg'"
+          matListItemIcon
+          alt="Sucursales"
+        />
+        <span class="sidebar-link" matListItemTitle [class.active-text]="isActive('/sucursales')">
+          Sucursales
+        </span>
+      </mat-list-item>
+
+      <mat-list-item
+        routerLink="/terminales"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="sidebar-link-wrapper"
+      >
+        <img
+          [src]="isActive('/terminales') ? 'assets/icons/terminales-active.svg' : 'assets/icons/terminales.svg'"
+          matListItemIcon
+          alt="Terminales"
+        />
+        <span class="sidebar-link" matListItemTitle [class.active-text]="isActive('/terminales')">
+          Terminales
+        </span>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+
+      <mat-list-item
+        routerLink="/parametros"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="sidebar-link-wrapper"
+      >
+        <img
+          [src]="isActive('/parametros') ? 'assets/icons/configuraciones-activo.svg' : 'assets/icons/configuraciones.svg'"
+          matListItemIcon
+          alt="Configuraciones"
+        />
+        <span class="sidebar-link" matListItemTitle [class.active-text]="isActive('/parametros')">
+          Configuraciones
+        </span>
+      </mat-list-item>
+
+      <mat-list-item
+        routerLink="/historial"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="sidebar-link-wrapper"
+      >
+        <img
+          [src]="isActive('/historial') ? 'assets/icons/historial-activo.svg' : 'assets/icons/historial.svg'"
+          matListItemIcon
+          alt="Historial"
+        />
+        <span class="sidebar-link" matListItemTitle [class.active-text]="isActive('/historial')">
+          Historial
+        </span>
+      </mat-list-item>
+
+      <mat-list-item
+        routerLink="/usuarios"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="sidebar-link-wrapper"
+      >
+        <img
+          [src]="isActive('/usuarios') ? 'assets/icons/usuarios-activo.svg' : 'assets/icons/usuarios.svg'"
+          matListItemIcon
+          alt="Usuarios"
+        />
+        <span class="sidebar-link" matListItemTitle [class.active-text]="isActive('/usuarios')">
+          Usuarios
+        </span>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <!-- Main Content -->
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" class="main-toolbar">
+      <span class="spacer"></span>
+      <button mat-button>
+        <mat-icon class="icon-style material-icons-outlined">settings</mat-icon>
+        Configuración y perfil
+      </button>
+      <span class="divider-vertical"></span>
+      <mat-icon class="material-icons-outlined" fontIcon="notifications"></mat-icon>
+      <span class="divider-vertical"></span>
+      <button mat-button>
+        Cerrar sesión
+      </button>
+    </mat-toolbar>
+
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

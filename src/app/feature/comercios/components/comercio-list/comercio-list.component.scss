@@ -1,0 +1,14 @@
+.table-container {
+  background: var(--color-background-alternative, #f5f9fb);
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.table-title {
+  color: var(--Icon-default, var(--color-icon-default, #222));
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+}

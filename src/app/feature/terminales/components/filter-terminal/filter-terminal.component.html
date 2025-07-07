@@ -1,0 +1,52 @@
+<div class="search-wrapper">
+  <div class="search-container">
+    <div class="search-header">
+      <h4>Búsqueda</h4>
+    </div>
+
+    <form [formGroup]="form">
+      <div class="grid-container">
+
+        <div class="input-group grid-item">
+          <app-input
+            formControlName="rut"
+            placeholder="RUT"
+            type="text"
+          ></app-input>
+        </div>
+
+        <div class="input-group grid-item">
+          <app-input
+            formControlName="terminal"
+            placeholder="Nº Terminal"
+            type="text"
+          ></app-input>
+        </div>
+
+        <div class="input-group grid-item">
+          <app-select
+            formControlName="estado"
+            [placeholder]="'Estado'"
+            [options]="estados"
+            [icon]="'assets/icons/down-arrow.svg'"
+            [control]="estadoControl"
+          ></app-select>
+        </div>
+
+        <!-- ✅ Botón Refrescar -->
+        <div class="refresh-button-wrapper">
+          <ui-button variant="outline" (click)="onRefresh()" trailingIcon="refresh">
+            Refrescar
+          </ui-button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <!-- ✅ Botón Agregar Sucursal -->
+  <div class="button-container">
+    <ui-button (click)="onAddTerminal()">
+      Agregar terminal
+    </ui-button>
+  </div>
+</div>

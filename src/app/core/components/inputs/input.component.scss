@@ -1,0 +1,73 @@
+:host {
+  ::ng-deep .input-wrapper {
+    width: 100%;
+
+    ::ng-deep .mat-mdc-text-field-wrapper {
+      border: none; 
+      border-top: 1px solid #deedf2;
+      border-right: 1px solid #deedf2;
+      border-left: 1px solid #deedf2;
+      border-radius: 4px 4px 0 0; 
+      background: #f5f9fb;
+      box-shadow: none !important;
+      padding: 3px 16px 4px 16px;
+    }
+
+    ::ng-deep {
+      .mat-form-field-appearance-outline .mat-form-field-outline {
+        color: white;
+      }
+      mat-form-field {
+        .mat-hint,
+        input,
+        ::placeholder,
+        .mat-form-field-label {
+          color: white;
+        }
+      }
+    }
+
+    .mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-line-ripple::before {
+      border-bottom-color: #137e84;
+    }
+    .mdc-text-field--filled .mdc-line-ripple::before {
+      border-bottom-width: var(--mdc-filled-text-field-active-indicator-height);
+    }
+
+    .mdc-line-ripple::before {
+      border-bottom-width: 1px;
+    }
+
+    .mdc-line-ripple::before {
+      z-index: 1; 
+    }
+
+    .mdc-line-ripple::before,
+    .mdc-line-ripple::after {
+      position: absolute; 
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      border-bottom-style: solid;
+      content: '';
+    }
+
+    ::ng-deep .mat-mdc-form-field-infix {
+      display: flex;
+      align-items: center;
+    }
+
+    
+    ::ng-deep .mat-input-element {
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+
+    
+    ::ng-deep mat-icon[matSuffix],
+    ::ng-deep .input-icon[matSuffix] {
+      margin-left: 8px;
+      margin-right: 8px;
+    }
+  }
+}

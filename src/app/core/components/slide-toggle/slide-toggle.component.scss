@@ -1,0 +1,38 @@
+mat-slide-toggle.slide-toggle {
+
+  --mdc-switch-selected-handle-color: var(--color-action-alternative-selected, #ffffff);
+  --mdc-switch-selected-hover-handle-color: var(--color-action-alternative-selected, #ffffff);
+  --mdc-switch-selected-focus-handle-color: var(--color-action-alternative-selected, #ffffff);
+  --mdc-switch-selected-pressed-handle-color: var(--color-action-alternative-selected, #ffffff);
+
+ 
+  --mdc-switch-selected-hover-state-layer-color: var(--color-action-alternative-selected, #127277);
+  --mdc-switch-selected-focus-state-layer-color: var(--color-action-alternative-selected, #127277);
+  --mdc-switch-selected-pressed-state-layer-color: var(--color-action-alternative-selected, #127277);
+
+  
+  --mdc-switch-selected-track-color: var(--color-action-alternative-selected, #127277);
+  --mdc-switch-selected-hover-track-color: var(--color-action-alternative-selected, #127277);
+  --mdc-switch-selected-focus-track-color: var(--color-action-alternative-selected, #127277);
+  --mdc-switch-selected-pressed-track-color: var(--color-action-alternative-selected, #127277);
+
+  --mdc-switch-selected-icon-color: var(--color-action-alternative-selected, #127277);
+  --mdc-switch-track-height: 24px;
+  --mdc-switch-track-shape: 40px;
+  --mdc-switch-track-width: 48px;
+  --mdc-switch-handle-width: 22px;
+  --mat-switch-unselected-with-icon-handle-horizontal-margin: 0px 0px 0px 2px;
+
+  ::ng-deep .mdc-form-field > label {
+    margin-left: 0;
+    margin-right: auto;
+    padding-left: 8px;
+    padding-right: 0;
+    order: 0;
+    color: var(--Text-default, var(--color-text-default, #222));
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+  }
+}

@@ -1,0 +1,30 @@
+<h2 mat-dialog-title>Editar configuración</h2>
+
+<mat-dialog-content class="dialog-body mat-typography">
+  <div class="grid-wrapper">
+    <form [formGroup]="dialogForm">
+      <div class="grid-container">
+        <div class="input-group grid-item">
+          <app-input
+            formControlName="config"
+            placeholder="Configuración"
+            type="text"
+          ></app-input>
+        </div>
+
+        <div class="input-group grid-item">
+          <app-input
+            formControlName="valor"
+            placeholder="Valor"
+            type="text"
+          ></app-input>
+        </div>
+      </div>
+    </form>
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions align="center">
+  <ui-button variant="outline" (click)="onClose()">Volver</ui-button>
+  <ui-button (click)="onSave()" [disabled]="dialogForm.invalid">Continuar</ui-button>
+</mat-dialog-actions>

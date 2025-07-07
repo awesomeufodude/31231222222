@@ -1,0 +1,10 @@
+<mat-slide-toggle
+  class="slide-toggle"
+  [ngClass]="toggleClass"
+  [checked]="checked"
+  [disabled]="disabled"
+  [labelPosition]="labelPosition"
+  (change)="onChange($event)"
+>
+  {{ label }}
+</mat-slide-toggle>

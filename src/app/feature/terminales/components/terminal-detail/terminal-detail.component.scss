@@ -1,0 +1,32 @@
+mat-dialog-content {
+  display: flex;
+  flex-direction: column;
+  gap: 18px 16px;
+  > div {
+    strong {
+      color: var(--Text-default, var(--color-text-default, #222));
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 24px;
+    }
+    &:nth-child(odd) {
+      color: #444;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 24px;
+    }
+  }
+}
+
+.ver-button {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.estado-toggle {
+  margin-right: 8px;
+}

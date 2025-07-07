@@ -1,0 +1,16 @@
+<div class="snack-wrapper">
+  <mat-icon
+    class="snack-icon material-icons-outlined"
+    [ngClass]="'icon-' + variant"
+    fontIcon="{{ icon }}">
+  </mat-icon>
+
+  <span class="snack-msg">{{ data.text }}</span>
+
+  <ui-button
+    variant="link-white"
+    (click)="close()"
+    class="snack-action">
+    OK
+  </ui-button>
+</div>

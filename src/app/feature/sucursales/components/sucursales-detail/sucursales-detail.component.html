@@ -1,0 +1,26 @@
+<h2 mat-dialog-title>Detalle de Comercio</h2>
+
+<mat-dialog-content class="mat-typography">
+  <div><strong>Código:</strong> {{ row.codigo }}</div>
+  <div><strong>Nombre:</strong> {{ row.Sucursales }}</div>
+  <div><strong>RUT:</strong> {{ row.rut }}</div>
+  <div><strong>Terminales:</strong> <ui-button variant="link" class="ver-button">Ver terminales</ui-button></div>
+  <div><strong>Número:</strong> {{ row.sucursal }}</div>
+  <div>
+    <strong class="estado-toggle">Estado:</strong>
+    <app-slide-toggle
+      [checked]="row.estado === 'Activo'"
+      [disabled]="false"
+      labelPosition="before"
+      label="{{ row.estado }}"
+      [toggleClass]="['my-slide', 'estado-toggle']"
+      (toggled)="onEstadoToggle($event, row)"
+    ></app-slide-toggle>
+  </div>
+  <div><strong>Creación:</strong> {{ row.creacion }}</div>
+</mat-dialog-content>
+
+<mat-dialog-actions align="center">
+  <ui-button variant="outline" (click)="salir()">Salir</ui-button>
+  <ui-button (click)="guardar()">Guardar cambios</ui-button>
+</mat-dialog-actions>

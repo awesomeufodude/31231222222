@@ -1,0 +1,51 @@
+<div class="search-wrapper">
+  <div class="search-container">
+    <div class="search-header">
+      <h4>Búsqueda</h4>
+    </div>
+
+    <form [formGroup]="form">
+      <div class="grid-container">
+        <div class="input-group grid-item">
+          <app-input
+            formControlName="name"
+            placeholder="Nombre"
+            type="text"
+          ></app-input>
+        </div>
+
+        <div class="input-group grid-item">
+          <app-input
+            formControlName="correo"
+            placeholder="Correo"
+            type="text"
+          ></app-input>
+        </div>
+
+        <div class="input-group grid-item">
+          <app-select
+            formControlName="rol"
+            [placeholder]="'Rol'"
+            [options]="roles"
+            [icon]="'assets/icons/down-arrow.svg'"
+            [control]="rolControl"
+          ></app-select>
+        </div>
+
+        <!-- ✅ Botón Refrescar -->
+        <div class="refresh-button-wrapper">
+          <ui-button variant="outline" (click)="onRefresh()" trailingIcon="refresh">
+            Refrescar
+          </ui-button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <!-- ✅ Botón Agregar Sucursal -->
+  <div class="button-container">
+    <ui-button (click)="onAddTerminal()">
+      Agregar usuario
+    </ui-button>
+  </div>
+</div>

@@ -1,0 +1,53 @@
+<div class="search-wrapper">
+  <div class="search-container">
+    <div class="search-header">
+      <h4>Búsqueda</h4>
+    </div>
+
+    <form [formGroup]="form" class="search-form">
+      <div class="row row-1">
+        <div class="field"><app-select formControlName="tipoAccion" [options]="acciones" placeholder="Tipo acción"></app-select></div>
+        <div class="field"><app-select formControlName="objeto"     [options]="objetos"  placeholder="Objeto"></app-select></div>
+        <div class="field"></div>
+        <div class="field refresh">
+          <ui-button variant="outline" trailingIcon="refresh" (click)="onRefresh()">Refrescar</ui-button>
+        </div>
+      </div>
+
+      <div class="date-filter-container">
+      <div class="">
+        <mat-radio-group formControlName="dateFilterType" class="radio-group">
+          <app-radio-button class="app-radio" value="today">Consulta de hoy</app-radio-button>
+          <app-radio-button class="app-radio" value="historical">Consulta histórica</app-radio-button>
+        </mat-radio-group>
+      </div>
+
+      <div class="date-picker-container" *ngIf="isHistorical">
+        
+        <mat-form-field class="input-wrapper">
+          <mat-label>Desde</mat-label>
+          <input matInput [matDatepicker]="picker1" formControlName="fromDate"  title="Desde">
+          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field class="input-wrapper">
+          <mat-label>Hasta</mat-label>
+          <input matInput [matDatepicker]="picker2" formControlName="toDate"  title="Hasta">
+          <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field>
+      </div>
+
+      <div class="filter-buttons-container">
+        <ui-button (click)="onSearch()">Buscar</ui-button>
+        <ui-button variant="outline" (click)="onClear()" leadingIcon="delete_sweep">Limpiar búsqueda</ui-button>
+      </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="download-container">
+    <ui-button variant="solid" (click)="onDownload()">Descargar</ui-button>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<mat-form-field class="custom-mat-select" appearance="fill">
+  <mat-label>{{ placeholder }}</mat-label>
+
+  <mat-select [value]="value" (selectionChange)="updateValue($event.value)" (blur)="onTouched()">
+    <mat-option value="" disabled>{{ placeholder }}</mat-option>
+    <mat-option *ngFor="let opt of options" [value]="opt">{{ opt }}</mat-option>
+  </mat-select>
+
+  <mat-error *ngIf="control?.touched && control?.errors?.['required']">
+    You must make a selection
+  </mat-error>
+
+  <mat-error *ngIf="control?.touched && control?.errors?.['pattern'] && !control?.errors?.['required']">
+    Your selection is invalid
+  </mat-error>
+</mat-form-field>

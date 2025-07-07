@@ -1,0 +1,54 @@
+::ng-deep .mdc-snackbar__label {
+  padding: 0px;
+}
+
+::ng-deep .mdc-snackbar__surface {
+  padding: 0px;
+}
+
+/* ---------- our custom card ---------------------------------- */
+.snack-wrapper {
+  width: 375px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 8px;
+  background: #222;
+  color: #fff;
+}
+
+.snack-msg {
+  color: #fff;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+}
+.snack-action {
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.snack-icon {
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+  padding: 10px;
+}
+.icon-success {
+  color: #4caf50;
+}
+.icon-info {
+  color: #03a9f4;
+}
+.icon-warning {
+  color: #ff9800;
+}
+.icon-error {
+  color: #ef5350;
+}

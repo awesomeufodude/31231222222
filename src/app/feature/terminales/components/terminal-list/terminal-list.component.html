@@ -1,0 +1,21 @@
+<div class="table-container">
+  <app-filter-terminal (filterChange)="onFilterChanged($event)"></app-filter-terminal>
+
+  <h2 class="table-title">Terminales</h2>
+
+  <app-data-table
+    [columns]="columns"
+    [data]="allData"
+    [pageSize]="10"
+    [pageSizeOptions]="[5, 10, 25]"
+    [rowActions]="rowActions"
+    (action)="handleAction($event)"
+    paginatorBarClass="pg-alt"
+  >
+    <ng-template dataTableCell="estado" let-row>
+      <span [ngClass]="{ activo: row.estado==='Activo', inactivo: row.estado==='Inactivo' }">
+        {{ row.estado }}
+      </span>
+    </ng-template>
+  </app-data-table>
+</div>

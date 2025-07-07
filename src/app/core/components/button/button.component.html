@@ -1,0 +1,21 @@
+<button
+  [type]="type"
+  [disabled]="disabled"
+  (click)="onClick($event)"
+  [attr.title]="buttonTitle || 'Button'"
+  [attr.aria-label]="buttonTitle || 'Button'"
+>
+  <mat-icon
+    *ngIf="leadingIcon"
+    class="btn__icon btn__icon--left material-icons-outlined"
+    fontIcon="{{ leadingIcon }}"
+  ></mat-icon>
+
+  <ng-content></ng-content>
+
+  <mat-icon
+    *ngIf="trailingIcon"
+    class="btn__icon btn__icon--right material-icons-outlined"
+    fontIcon="{{ trailingIcon }}"
+  ></mat-icon>
+</button>

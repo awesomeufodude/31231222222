@@ -1,0 +1,40 @@
+<h2 mat-dialog-title>Nuevo usuario</h2>
+
+<mat-dialog-content class="dialog-body mat-typography">
+
+  <div class="grid-wrapper">
+    <form [formGroup]="dialogForm">
+      <div class="grid-container">
+        <div class="input-group grid-item">
+          <app-input formControlName="id" placeholder="ID" type="text"></app-input>
+        </div>
+
+        <div class="input-group grid-item">
+          <app-input
+            formControlName="correo"
+            placeholder="Correo"
+            type="text"
+          ></app-input>
+        </div>
+
+        <div class="input-group grid-item">
+          <app-select
+            formControlName="rol"
+            [placeholder]="'Rol'"
+            [options]="roles"
+            [icon]="'assets/icons/down-arrow.svg'"
+            [control]="rolControl"
+          ></app-select>
+        </div>
+
+      </div>
+    </form>
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions align="center">
+  <ui-button variant="outline" (click)="onClose()">Volver</ui-button>
+  <ui-button (click)="onSave()" [disabled]="dialogForm.invalid">
+    Continuar
+  </ui-button>
+</mat-dialog-actions>

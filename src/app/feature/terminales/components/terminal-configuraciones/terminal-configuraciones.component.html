@@ -1,0 +1,39 @@
+<h2 mat-dialog-title>Comercial SD SpA - Terminal 1</h2>
+
+<mat-dialog-content class="mat-typography">
+  <mat-tab-group class="tabs">
+    <mat-tab label="Configuraciones">
+      <div class="tab">
+        <ng-container *ngFor="let f of features">
+          <app-slide-toggle
+            class="my-slide"
+            [checked]="f.enabled"
+            [disabled]="false"
+            labelPosition="after"
+            [label]="f.label"
+            (toggled)="onToggle(f, $event)"
+          ></app-slide-toggle>
+        </ng-container>
+      </div>
+    </mat-tab>
+    <mat-tab label="Funcionalidades APP">
+      <div class="tab">
+        <ng-container *ngFor="let f of features">
+          <app-slide-toggle
+            class="my-slide"
+            [checked]="f.enabled"
+            [disabled]="false"
+            labelPosition="after"
+            [label]="f.label"
+            (toggled)="onToggle(f, $event)"
+          ></app-slide-toggle>
+        </ng-container>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</mat-dialog-content>
+
+<mat-dialog-actions align="center">
+  <ui-button variant="outline" (click)="volver()">Volver</ui-button>
+  <ui-button (click)="confirmar()">Confirmar</ui-button>
+</mat-dialog-actions>

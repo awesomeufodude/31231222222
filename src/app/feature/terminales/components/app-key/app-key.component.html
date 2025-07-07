@@ -1,0 +1,12 @@
+<h2 mat-dialog-title>
+  <mat-icon class="material-icons-outlined app-icon-info">info</mat-icon>
+  APP Key
+</h2>
+
+<mat-dialog-content class="mat-typography key-content">
+  <div class="key-value">{{ appKey }}</div>
+</mat-dialog-content>
+
+<mat-dialog-actions align="center">
+  <ui-button (buttonClick)="cerrar()">Cerrar</ui-button>
+</mat-dialog-actions>
